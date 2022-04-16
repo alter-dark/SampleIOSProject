@@ -3,10 +3,12 @@ on: [push]
 
 jobs:
   run_tests:
-    uses: actions/checkout@v3
-    uses: sersoft-gmbh/xcodebuild-action@v1
-    with:
-      project: ExampleProject.xcodeproj
-      scheme: ExampleProject
-      destination: platform=iOS Simulator,name=iPhone 8,OS=15.2
-      action: test
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v3
+      - uses: sersoft-gmbh/xcodebuild-action@v1
+        with:
+          project: ExampleProject.xcodeproj
+          scheme: ExampleProject
+          destination: platform=iOS Simulator,name=iPhone 8,OS=15.2
+          action: test
