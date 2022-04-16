@@ -2,10 +2,11 @@ name: "Run iOS Tests"
 on: [push]
 
 jobs:
-  - uses: actions/checkout@v3
-  - uses: sersoft-gmbh/xcodebuild-action@v1
-    with:
-      project: ExampleProject.xcodeproj
-      scheme: ExampleProject
-      destination: platform=iOS Simulator,name=iPhone 8,OS=15.2
-      action: test
+  run_tests:
+    - uses: actions/checkout@v3
+    - uses: sersoft-gmbh/xcodebuild-action@v1
+        with:
+          project: ExampleProject.xcodeproj
+          scheme: ExampleProject
+          destination: platform=iOS Simulator,name=iPhone 8,OS=15.2
+          action: test
