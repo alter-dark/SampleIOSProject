@@ -16,7 +16,7 @@ class SimpleCalculatorTests: XCTestCase {
     }
     
     func testCanSubtract() {
-        let result = sut.subtract(a: 3, b: 5)
+        let result = sut.subtract(a: 9, b: 5)
         XCTAssertEqual(result, 4)
     }
     
