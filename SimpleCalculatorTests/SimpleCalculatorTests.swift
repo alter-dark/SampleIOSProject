@@ -1,16 +1,14 @@
 //
 //  SimpleCalculatorTests.swift
-//  ExampleProjectTests
+//  SimpleCalculatorTests
 //
-//  Created by John on 4/16/22.
+//  Created by John on 4/17/22.
 //
 
-import Foundation
 import XCTest
-
 @testable import ExampleProject
 
-class SimpleCalculatortest : XCTestCase {
+class SimpleCalculatorTests: XCTestCase {
     var sut = SimpleCalculator()
     
     func testCalculatorIsNotNil() {
