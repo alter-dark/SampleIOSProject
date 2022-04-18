@@ -1,0 +1,14 @@
+name: "Test on iOS"
+on: [workflow_dispatch]
+env:
+  PROJECT_NAME: ExampleProject
+  TARGET: SimpleCalculatorTests
+
+jobs:
+  run_tests:
+    runs-on: macos-11
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      - name: Test on iPhone 12 - iOS 15.2
+        run: xcodebuild test -scheme ${{ env.PROJECT_NAME }} -project ${{ env.PROJECT_NAME }}.xcodeproj -only-testing ${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }} -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.2' | xcpretty
