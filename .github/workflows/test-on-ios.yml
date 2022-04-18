@@ -3,12 +3,6 @@ env:
   PROJECT_NAME: ExampleProject
   TEST_TARGET: SimpleCalculatorTests
 on:
-  push:
-    inputs:
-      target:
-        type: string
-        required: false
-        default: 'iPhone 8'
   workflow_dispatch:
     inputs:
       target:
