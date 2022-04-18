@@ -3,7 +3,7 @@ env:
   PROJECT_NAME: ExampleProject
   TEST_TARGET: SimpleCalculatorTests
 on:
-  push
+  push:
   workflow_dispatch:
     inputs:
       target:
