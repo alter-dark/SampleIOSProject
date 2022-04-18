@@ -1,0 +1,16 @@
+# For more information about this configuration visit
+# https://docs.fastlane.tools/actions/scan/#scanfile
+
+# In general, you can use the options available
+# fastlane scan --help
+
+# Remove the # in front of the line to enable the option
+
+scheme('ExampleProject')
+devices(['iPhone 8','iPhone 12','iPad mini (6th generation)','iPad (8th generation)','iPod touch (7th generation)'])
+project('ExampleProject.xcodeproj')
+only_testing(['SimpleCalculatorTests/SimpleCalculatorTests'])
+# open_report(true)
+
+# Enable skip_build to skip debug builds for faster test performance
+skip_build(true)
