@@ -9,4 +9,6 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
       - name: Test on iOS Devices
-        run: bundle exec fastlane scan
+        run:  |
+        bundle update
+        bundle exec fastlane scan
