@@ -11,4 +11,4 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
       - name: Test on iPhone 12 - iOS 15.2
-        run: xcodebuild test -scheme ${{ env.PROJECT_NAME }} -project ${{ env.PROJECT_NAME }}.xcodeproj -only-testing ${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }} -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.2' | xcpretty
+        run: xcodebuild test -scheme ${{ env.PROJECT_NAME }} -project ${{ env.PROJECT_NAME }}.xcodeproj -only-testing ${{ env.TARGET }}/${{ env.TARGET }} -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
