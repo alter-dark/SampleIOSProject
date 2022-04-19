@@ -16,9 +16,9 @@ jobs:
         run:  |
           bundle update
           bundle exec fastlane scan
-          
+
       - name: Get the bundle result
-          uses: actions/upload-artifact@v3
-          with:
-            name: Test result
-            path: fastlane/test_output/ExampleProject.xcresult
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test result
+          path: fastlane/test_output/ExampleProject.xcresult
