@@ -7,10 +7,11 @@
 # Remove the # in front of the line to enable the option
 
 scheme('ExampleProject')
-devices(['iPhone 12'])
+devices(['iPod touch (7th generation)','iPhone 12','iPad (7th generation)'])
 project('ExampleProject.xcodeproj')
 only_testing(['SimpleCalculatorTests/SimpleCalculatorTests'])
-# open_report(true)
+xcodebuild_formatter('xcbeautify')
+result_bundle(true)
 
 # Enable skip_build to skip debug builds for faster test performance
 skip_build(true)
