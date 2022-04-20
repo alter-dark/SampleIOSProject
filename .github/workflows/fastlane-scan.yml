@@ -20,5 +20,5 @@ jobs:
       - name: Get the bundle result
         uses: actions/upload-artifact@v3
         with:
-          name: Test result
+          name: Test-result.xcresult
           path: fastlane/test_output/ExampleProject.xcresult
