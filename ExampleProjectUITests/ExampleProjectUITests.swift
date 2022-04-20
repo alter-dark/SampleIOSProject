@@ -22,13 +22,32 @@ class ExampleProjectUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testLogicSuccess() throws {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
+        /* let app = XCUIApplication()
+        app.launch() */
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.launch()
+    
+        // XCTAssertTrue(app.navigationBars["LoginVC"].exists)
+        
+        let usernameTextField = app.textFields["Username"]
+        // XCTAssertTrue(usernameTextField.exists)
+        usernameTextField.tap()
+        usernameTextField.typeText("WrongUser")
+        
+        let passTextField = app.textFields["Password"]
+        // XCTAssertTrue(passTextField.exists)
+        passTextField.tap()
+        passTextField.typeText("dk2022@")
+        
+        app/*@START_MENU_TOKEN@*/.staticTexts["Log in"]/*[[".buttons[\"Log in\"].staticTexts[\"Log in\"]",".staticTexts[\"Log in\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        XCTAssertTrue(app.navigationBars["Welcome to your dashboard"].exists)
     }
 
     func testLaunchPerformance() throws {
