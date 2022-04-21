@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var passTextField: UITextField!
     
+    @IBOutlet var responseTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,14 @@ class ViewController: UIViewController {
         }else {
             print("Credentials are invalid")
         }
+    }
+    
+    
+    @IBAction func btnGet_touchup(_ sender: Any) {
+        let request = NetworkRequests()
+        
+        let result = request.dataTaskNetwork(urlString: "https://httpbin.org/get?param1=val1&param2=val2")
+        responseTextView.text = result["data"] as? String ?? ""
     }
     
     class SecondViewController : UIViewController {

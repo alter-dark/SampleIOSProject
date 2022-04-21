@@ -5,10 +5,18 @@
 //  Created by John on 4/16/22.
 //
 
+import Foundation
+import SBTUITestTunnelClient
+
 import XCTest
 
 class ExampleProjectUITests: XCTestCase {
-
+    override func setUp() {
+        super.setUp()
+        
+        app.launchTunnel()
+    }
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -21,6 +29,20 @@ class ExampleProjectUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testStubSimpleURL() throws {
+        app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: ["stubbed": 1]))
+        
+        // let responseTextField = app.textViews["Response"]
+        // XCTAssertTrue(responseTextField.exists)
+        
+        /* let getButton = app.staticTexts["GET"]
+        getButton.tap() */
+        
+        let request = NetworkRequests()
+        let result = request.dataTaskNetwork(urlString: "https://httpbin.org/get?param1=val1&param2=val2")
+        XCTAssert(request.isStubbed(result, expectedStubValue: 1))
+    }
 
     func testLogicSuccess() throws {
         // UI tests must launch the application that they test.
@@ -30,15 +52,15 @@ class ExampleProjectUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let app = XCUIApplication()
-        app.launch()
+        /* let app = XCUIApplication()
+        app.launch() */
     
         // XCTAssertTrue(app.navigationBars["LoginVC"].exists)
         
         let usernameTextField = app.textFields["Username"]
         // XCTAssertTrue(usernameTextField.exists)
         usernameTextField.tap()
-        usernameTextField.typeText("WrongUser")
+        usernameTextField.typeText("darky")
         
         let passTextField = app.textFields["Password"]
         // XCTAssertTrue(passTextField.exists)

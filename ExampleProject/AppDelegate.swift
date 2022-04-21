@@ -7,12 +7,17 @@
 
 import UIKit
 
+// #if DEBUG
+    import SBTUITestTunnelServer
+// #endif
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        SBTUITestTunnelServer.takeOff()
+        #if DEBUG
+        #endif
         // Override point for customization after application launch.
         return true
     }

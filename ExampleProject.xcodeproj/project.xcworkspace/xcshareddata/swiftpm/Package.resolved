@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GCDWebServer",
+        "repositoryURL": "https://github.com/Subito-it/GCDWebServer.git",
+        "state": {
+          "branch": null,
+          "revision": "53a75d58ce45adee997340f25581bf54b46cfc20",
+          "version": "4.0.0"
+        }
+      },
+      {
+        "package": "SBTUITestTunnel",
+        "repositoryURL": "https://github.com/Subito-it/SBTUITestTunnel",
+        "state": {
+          "branch": "master",
+          "revision": "81ec9c3c6e1df6b4e3d90d435e74a5e10825324e",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

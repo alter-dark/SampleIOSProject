@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1143DCCF2811B83000ACCC22 /* SBTUITestTunnelClient in Frameworks */ = {isa = PBXBuildFile; productRef = 1143DCCE2811B83000ACCC22 /* SBTUITestTunnelClient */; };
+		1143DCD12811B83000ACCC22 /* SBTUITestTunnelServer in Frameworks */ = {isa = PBXBuildFile; productRef = 1143DCD02811B83000ACCC22 /* SBTUITestTunnelServer */; };
+		1143DCD32811BFB300ACCC22 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */; };
+		1143DCD42811BFB300ACCC22 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */; };
 		116B4A82280D0AE700EDD8A5 /* SimpleCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B4A81280D0AE700EDD8A5 /* SimpleCalculatorTests.swift */; };
 		11C82422280B337800ADED4F /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C82421280B337800ADED4F /* SimpleCalculator.swift */; };
 		11D3B9F5280B287800B4CA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3B9F4280B287800B4CA57 /* AppDelegate.swift */; };
@@ -52,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
 		116B4A72280D0A8B00EDD8A5 /* DummyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DummyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		116B4A7F280D0AE700EDD8A5 /* SimpleCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		116B4A81280D0AE700EDD8A5 /* SimpleCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorTests.swift; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1143DCD12811B83000ACCC22 /* SBTUITestTunnelServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1143DCCF2811B83000ACCC22 /* SBTUITestTunnelClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +166,7 @@
 				11D3B9FD280B287900B4CA57 /* Assets.xcassets */,
 				11D3B9FF280B287900B4CA57 /* LaunchScreen.storyboard */,
 				11D3BA02280B287900B4CA57 /* Info.plist */,
+				1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */,
 			);
 			path = ExampleProject;
 			sourceTree = "<group>";
@@ -233,6 +241,9 @@
 			dependencies = (
 			);
 			name = ExampleProject;
+			packageProductDependencies = (
+				1143DCD02811B83000ACCC22 /* SBTUITestTunnelServer */,
+			);
 			productName = ExampleProject;
 			productReference = 11D3B9F1280B287800B4CA57 /* ExampleProject.app */;
 			productType = "com.apple.product-type.application";
@@ -269,6 +280,9 @@
 				11D3BA13280B287900B4CA57 /* PBXTargetDependency */,
 			);
 			name = ExampleProjectUITests;
+			packageProductDependencies = (
+				1143DCCE2811B83000ACCC22 /* SBTUITestTunnelClient */,
+			);
 			productName = ExampleProjectUITests;
 			productReference = 11D3BA11280B287900B4CA57 /* ExampleProjectUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -313,6 +327,9 @@
 				Base,
 			);
 			mainGroup = 11D3B9E8280B287800B4CA57;
+			packageReferences = (
+				1143DCCD2811B83000ACCC22 /* XCRemoteSwiftPackageReference "SBTUITestTunnel" */,
+			);
 			productRefGroup = 11D3B9F2280B287800B4CA57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D3B9F9280B287800B4CA57 /* ViewController.swift in Sources */,
+				1143DCD32811BFB300ACCC22 /* NetworkRequests.swift in Sources */,
 				11C82422280B337800ADED4F /* SimpleCalculator.swift in Sources */,
 				11D3B9F5280B287800B4CA57 /* AppDelegate.swift in Sources */,
 				11D3B9F7280B287800B4CA57 /* SceneDelegate.swift in Sources */,
@@ -408,6 +426,7 @@
 			files = (
 				11D3BA16280B287900B4CA57 /* ExampleProjectUITests.swift in Sources */,
 				11D3BA18280B287900B4CA57 /* ExampleProjectUITestsLaunchTests.swift in Sources */,
+				1143DCD42811BFB300ACCC22 /* NetworkRequests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +843,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1143DCCD2811B83000ACCC22 /* XCRemoteSwiftPackageReference "SBTUITestTunnel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Subito-it/SBTUITestTunnel";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1143DCCE2811B83000ACCC22 /* SBTUITestTunnelClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1143DCCD2811B83000ACCC22 /* XCRemoteSwiftPackageReference "SBTUITestTunnel" */;
+			productName = SBTUITestTunnelClient;
+		};
+		1143DCD02811B83000ACCC22 /* SBTUITestTunnelServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1143DCCD2811B83000ACCC22 /* XCRemoteSwiftPackageReference "SBTUITestTunnel" */;
+			productName = SBTUITestTunnelServer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11D3B9E9280B287800B4CA57 /* Project object */;
 }

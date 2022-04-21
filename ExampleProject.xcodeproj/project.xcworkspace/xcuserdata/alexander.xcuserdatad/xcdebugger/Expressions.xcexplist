@@ -10,5 +10,8 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ExampleProjectUITests.testStubSimpleURL():ExampleProjectUITests.swift">
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
