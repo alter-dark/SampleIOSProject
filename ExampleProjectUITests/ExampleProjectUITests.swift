@@ -7,14 +7,17 @@
 
 import Foundation
 import SBTUITestTunnelClient
-
 import XCTest
 
 class ExampleProjectUITests: XCTestCase {
     override func setUp() {
         super.setUp()
-        
-        app.launchTunnel()
+        app.launchTunnel(withOptions: [SBTUITunneledApplicationLaunchOptionResetFilesystem]) {
+            // do additional setup before the app launches
+            // i.e. prepare stub request, start monitoring requests
+            
+            self.app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: ["stubbed": 1]))
+        }
     }
     
     override func setUpWithError() throws {
@@ -31,17 +34,20 @@ class ExampleProjectUITests: XCTestCase {
     }
     
     func testStubSimpleURL() throws {
-        app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: ["stubbed": 1]))
+        // Stubs work here as well
+        // self.app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: ["stubbed": 1]))
         
-        // let responseTextField = app.textViews["Response"]
-        // XCTAssertTrue(responseTextField.exists)
+        let getButton = app.staticTexts["GET"]
+        XCTAssertTrue(getButton.exists)
+        getButton.tap()
         
-        /* let getButton = app.staticTexts["GET"]
-        getButton.tap() */
+        let responseTextField = app.textViews["RequestDone"]
+        let exists = responseTextField.waitForExistence(timeout: 5)
+        XCTAssertTrue(exists)
         
-        let request = NetworkRequests()
-        let result = request.dataTaskNetwork(urlString: "https://httpbin.org/get?param1=val1&param2=val2")
-        XCTAssert(request.isStubbed(result, expectedStubValue: 1))
+        let expectedText = "{\"stubbed\":1}"
+        let actualText = responseTextField.value as! String
+        XCTAssertEqual(expectedText, actualText, "Request is not being stubbed")
     }
 
     func testLogicSuccess() throws {

@@ -12,6 +12,14 @@
       </ContextState>
       <ContextState
          contextName = "ExampleProjectUITests.testStubSimpleURL():ExampleProjectUITests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "responseTextField.value as! String">
+            </PersistentString>
+            <PersistentString
+               value = "responseTextField.label">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

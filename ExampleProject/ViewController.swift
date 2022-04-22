@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "LoginVC"
+        
         // Do any additional setup after loading the view.
     }
 
@@ -37,10 +38,26 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnGet_touchup(_ sender: Any) {
-        let request = NetworkRequests()
+        makeSomeNetworkCall()
+    }
+    
+    func makeSomeNetworkCall() {
+        let urlString = "https://httpbin.org/get?param1=val1&param2=val2"
+        let url = URL(string: urlString)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         
-        let result = request.dataTaskNetwork(urlString: "https://httpbin.org/get?param1=val1&param2=val2")
-        responseTextView.text = result["data"] as? String ?? ""
+        URLSession.shared.dataTask(with: request) { data, _, _ in
+            DispatchQueue.main.async {
+                let dataString = data?.base64EncodedString() ?? ""
+                if let encodedData = Data(base64Encoded: dataString) {
+                    if let decodedData = String(data: encodedData, encoding: .utf8) {
+                        self.responseTextView.text = decodedData
+                        self.responseTextView.accessibilityLabel = "RequestDone"
+                    }
+                }
+            }
+        }.resume()
     }
     
     class SecondViewController : UIViewController {
