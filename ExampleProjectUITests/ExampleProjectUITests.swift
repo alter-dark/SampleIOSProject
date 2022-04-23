@@ -12,12 +12,11 @@ import XCTest
 class ExampleProjectUITests: XCTestCase {
     override func setUp() {
         super.setUp()
-        app.launchTunnel(withOptions: [SBTUITunneledApplicationLaunchOptionResetFilesystem]) {
+        app.launchTunnel()
+        /* app.launchTunnel(withOptions: [SBTUITunneledApplicationLaunchOptionResetFilesystem]) {
             // do additional setup before the app launches
             // i.e. prepare stub request, start monitoring requests
-            
-            self.app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: ["stubbed": 1]))
-        }
+        } */
     }
     
     override func setUpWithError() throws {
@@ -31,6 +30,39 @@ class ExampleProjectUITests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func json(utf8Data: Data) -> [String: Any] {
+        return ((try? JSONSerialization.jsonObject(with: utf8Data, options: [])) as? [String: Any]) ?? [:]
+    }
+    
+    func testStubWithFile() throws {
+        let bundle = Bundle(for: type(of: self))
+        guard let path = bundle.path(forResource: "expected", ofType: "json") else { return
+        }
+        let jsonContent = try? String(contentsOfFile: path)
+        
+        let data = Data(jsonContent!.utf8)
+        let mockedResponse = json(utf8Data: data)
+        // Stub with the json
+        app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: mockedResponse))
+        
+        XCTAssertFalse(app.stubRequestsAll().isEmpty)
+        
+        let getButton = app.staticTexts["GET"]
+        XCTAssertTrue(getButton.exists)
+        getButton.tap()
+        
+        let responseTextField = app.textViews["RequestDone"]
+        let exists = responseTextField.waitForExistence(timeout: 5)
+        XCTAssertTrue(exists)
+        
+        let actualText = responseTextField.value as! String
+        let actualData = Data(actualText.utf8)
+        
+        let actualResponse = NSDictionary(dictionary: json(utf8Data: actualData))
+        
+        XCTAssertTrue(actualResponse.isEqual(to: mockedResponse))
     }
     
     func testStubSimpleURL() throws {
@@ -47,6 +79,7 @@ class ExampleProjectUITests: XCTestCase {
         
         let expectedText = "{\"stubbed\":1}"
         let actualText = responseTextField.value as! String
+        
         XCTAssertEqual(expectedText, actualText, "Request is not being stubbed")
     }
 

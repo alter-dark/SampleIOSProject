@@ -11,6 +11,7 @@
 		1143DCD12811B83000ACCC22 /* SBTUITestTunnelServer in Frameworks */ = {isa = PBXBuildFile; productRef = 1143DCD02811B83000ACCC22 /* SBTUITestTunnelServer */; };
 		1143DCD32811BFB300ACCC22 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */; };
 		1143DCD42811BFB300ACCC22 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */; };
+		1143DCDB28145FEE00ACCC22 /* expected.json in Resources */ = {isa = PBXBuildFile; fileRef = 1143DCDA28145FEE00ACCC22 /* expected.json */; };
 		116B4A82280D0AE700EDD8A5 /* SimpleCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B4A81280D0AE700EDD8A5 /* SimpleCalculatorTests.swift */; };
 		11C82422280B337800ADED4F /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C82421280B337800ADED4F /* SimpleCalculator.swift */; };
 		11D3B9F5280B287800B4CA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3B9F4280B287800B4CA57 /* AppDelegate.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
+		1143DCDA28145FEE00ACCC22 /* expected.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = expected.json; sourceTree = "<group>"; };
 		116B4A72280D0A8B00EDD8A5 /* DummyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DummyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		116B4A7F280D0AE700EDD8A5 /* SimpleCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		116B4A81280D0AE700EDD8A5 /* SimpleCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorTests.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		11D3BA14280B287900B4CA57 /* ExampleProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
+				1143DCDA28145FEE00ACCC22 /* expected.json */,
 				1172B001280B4E2000518E0B /* .github */,
 				11D3BA15280B287900B4CA57 /* ExampleProjectUITests.swift */,
 				11D3BA17280B287900B4CA57 /* ExampleProjectUITestsLaunchTests.swift */,
@@ -379,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1143DCDB28145FEE00ACCC22 /* expected.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
