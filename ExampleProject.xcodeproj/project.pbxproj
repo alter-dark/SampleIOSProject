@@ -13,6 +13,8 @@
 		1143DCD42811BFB300ACCC22 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143DCD22811BFB300ACCC22 /* NetworkRequests.swift */; };
 		1143DCDB28145FEE00ACCC22 /* expected.json in Resources */ = {isa = PBXBuildFile; fileRef = 1143DCDA28145FEE00ACCC22 /* expected.json */; };
 		116B4A82280D0AE700EDD8A5 /* SimpleCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B4A81280D0AE700EDD8A5 /* SimpleCalculatorTests.swift */; };
+		11B5BE0D281C40140070838D /* SampleIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5BE0A281C3D590070838D /* SampleIdentification.swift */; };
+		11B5BE0F281C42390070838D /* NavigationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B5BE0E281C42390070838D /* NavigationBuilder.swift */; };
 		11C82422280B337800ADED4F /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C82421280B337800ADED4F /* SimpleCalculator.swift */; };
 		11D3B9F5280B287800B4CA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3B9F4280B287800B4CA57 /* AppDelegate.swift */; };
 		11D3B9F7280B287800B4CA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3B9F6280B287800B4CA57 /* SceneDelegate.swift */; };
@@ -21,7 +23,7 @@
 		11D3B9FE280B287900B4CA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D3B9FD280B287900B4CA57 /* Assets.xcassets */; };
 		11D3BA01280B287900B4CA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D3B9FF280B287900B4CA57 /* LaunchScreen.storyboard */; };
 		11D3BA0C280B287900B4CA57 /* ExampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3BA0B280B287900B4CA57 /* ExampleProjectTests.swift */; };
-		11D3BA16280B287900B4CA57 /* ExampleProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3BA15280B287900B4CA57 /* ExampleProjectUITests.swift */; };
+		11D3BA16280B287900B4CA57 /* 	.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3BA15280B287900B4CA57 /* 	.swift */; };
 		11D3BA18280B287900B4CA57 /* ExampleProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3BA17280B287900B4CA57 /* ExampleProjectUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		116B4A72280D0A8B00EDD8A5 /* DummyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DummyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		116B4A7F280D0AE700EDD8A5 /* SimpleCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		116B4A81280D0AE700EDD8A5 /* SimpleCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorTests.swift; sourceTree = "<group>"; };
+		11B5BE0A281C3D590070838D /* SampleIdentification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleIdentification.swift; sourceTree = "<group>"; };
+		11B5BE0E281C42390070838D /* NavigationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBuilder.swift; sourceTree = "<group>"; };
 		11C82421280B337800ADED4F /* SimpleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
 		11D3B9F1280B287800B4CA57 /* ExampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D3B9F4280B287800B4CA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +78,7 @@
 		11D3BA07280B287900B4CA57 /* ExampleProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D3BA0B280B287900B4CA57 /* ExampleProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProjectTests.swift; sourceTree = "<group>"; };
 		11D3BA11280B287900B4CA57 /* ExampleProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11D3BA15280B287900B4CA57 /* ExampleProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProjectUITests.swift; sourceTree = "<group>"; };
+		11D3BA15280B287900B4CA57 /* 	.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\t.swift"; sourceTree = "<group>"; };
 		11D3BA17280B287900B4CA57 /* ExampleProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,10 +188,12 @@
 		11D3BA14280B287900B4CA57 /* ExampleProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
+				11B5BE0A281C3D590070838D /* SampleIdentification.swift */,
 				1143DCDA28145FEE00ACCC22 /* expected.json */,
 				1172B001280B4E2000518E0B /* .github */,
-				11D3BA15280B287900B4CA57 /* ExampleProjectUITests.swift */,
+				11D3BA15280B287900B4CA57 /* 	.swift */,
 				11D3BA17280B287900B4CA57 /* ExampleProjectUITestsLaunchTests.swift */,
+				11B5BE0E281C42390070838D /* NavigationBuilder.swift */,
 			);
 			path = ExampleProjectUITests;
 			sourceTree = "<group>";
@@ -428,9 +434,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D3BA16280B287900B4CA57 /* ExampleProjectUITests.swift in Sources */,
+				11D3BA16280B287900B4CA57 /* 	.swift in Sources */,
 				11D3BA18280B287900B4CA57 /* ExampleProjectUITestsLaunchTests.swift in Sources */,
 				1143DCD42811BFB300ACCC22 /* NetworkRequests.swift in Sources */,
+				11B5BE0D281C40140070838D /* SampleIdentification.swift in Sources */,
+				11B5BE0F281C42390070838D /* NavigationBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

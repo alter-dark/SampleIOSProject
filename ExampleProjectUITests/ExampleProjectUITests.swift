@@ -10,13 +10,19 @@ import SBTUITestTunnelClient
 import XCTest
 
 class ExampleProjectUITests: XCTestCase {
+    
+    let LoginButton = SampleIdentification(
+        accessibilityIdentifier: "login_button", elemenType: .button)
+    
+    let PassWordElement = SampleIdentification(
+        accessibilityIdentifier: "login_password_textfield", elemenType: .textField)
+    
+    let UserNameElement = SampleIdentification(
+        accessibilityIdentifier: "login_username_textfield", elemenType: .textField)
+    
     override func setUp() {
         super.setUp()
         app.launchTunnel()
-        /* app.launchTunnel(withOptions: [SBTUITunneledApplicationLaunchOptionResetFilesystem]) {
-            // do additional setup before the app launches
-            // i.e. prepare stub request, start monitoring requests
-        } */
     }
     
     override func setUpWithError() throws {
@@ -66,8 +72,7 @@ class ExampleProjectUITests: XCTestCase {
     }
     
     func testStubSimpleURL() throws {
-        // Stubs work here as well
-        // self.app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: ["stubbed": 1]))
+        self.app.stubRequests(matching: SBTRequestMatch(url: "httpbin.org"), response: SBTStubResponse(response: ["stubbed": 1]))
         
         let getButton = app.staticTexts["GET"]
         XCTAssertTrue(getButton.exists)
@@ -83,30 +88,20 @@ class ExampleProjectUITests: XCTestCase {
         XCTAssertEqual(expectedText, actualText, "Request is not being stubbed")
     }
 
-    func testLogicSuccess() throws {
-        // UI tests must launch the application that they test.
-        /* let app = XCUIApplication()
-        app.launch() */
+    func testLoginSuccess() throws {
+        NavigationBuilder(app: app)
+            .wait(element: UserNameElement)
+            .tap(element: UserNameElement)
+            .type(element: UserNameElement, text: "darky")
         
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        /* let app = XCUIApplication()
-        app.launch() */
-    
-        // XCTAssertTrue(app.navigationBars["LoginVC"].exists)
-        
-        let usernameTextField = app.textFields["Username"]
-        // XCTAssertTrue(usernameTextField.exists)
-        usernameTextField.tap()
-        usernameTextField.typeText("darky")
-        
-        let passTextField = app.textFields["Password"]
-        // XCTAssertTrue(passTextField.exists)
-        passTextField.tap()
-        passTextField.typeText("dk2022@")
-        
-        app/*@START_MENU_TOKEN@*/.staticTexts["Log in"]/*[[".buttons[\"Log in\"].staticTexts[\"Log in\"]",".staticTexts[\"Log in\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        NavigationBuilder(app: app)
+            .wait(element: PassWordElement)
+            .tap(element: PassWordElement)
+            .type(element: PassWordElement, text: "dk2022@")
+
+        NavigationBuilder(app: app)
+            .wait(element: LoginButton)
+            .tap(element: LoginButton)
         
         XCTAssertTrue(app.navigationBars["Welcome to your dashboard"].exists)
     }
